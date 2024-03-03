@@ -11,7 +11,7 @@ documentaion_tool: jupyter-book
 documentation_url: https://mlops2024.halla.ai
 email: yj.lee@chu.ac.kr
 favicon_path: https://assets.entelecheia.ai/favicon.png
-friendly_name: 머신러닝시스템디자인 2024
+friendly_name: 머신러닝시스템 2024
 github_repo_name: mlops-2024
 github_username: chu-aie
 google_analytics_id: G-BQJE5V9RK2
