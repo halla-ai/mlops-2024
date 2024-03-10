@@ -10,6 +10,7 @@ on:
     paths:
       - "src/**"
       - "tests/**"
+      - ".github/workflows/lint_and_test.yaml"
 
 jobs:
   build:
@@ -20,7 +21,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: [3.8]
+        python-version: [3.9]
 
     steps:
       # Checkout the code base #
@@ -74,5 +75,6 @@ jobs:
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # required
+          slug: chu-aie/mlops-2024
           fail_ci_if_error: false # optional (default = false)
           verbose: true # optional (default = false)
