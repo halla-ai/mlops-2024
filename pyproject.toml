@@ -10,7 +10,7 @@ readme = "README.md"
 packages = [{ include = "mlops2024", from = "src" }]
 
 [tool.poetry.scripts]
-mlops2024 = 'mlops2024.__cli__:main'
+mlops2024 = 'mlops2024.__click__:main'
 
 [tool.poetry.dependencies]
 python = ">=3.9,<=3.12"
