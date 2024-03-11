@@ -34,7 +34,7 @@ style G fill:#c9a690
 width: 700px
 name: fig-mlcode
 ---
-Only a small fraction of real-world ML systems is composed of the ML code {cite:p}`sculley2015hidden`
+Only a small fraction of real-world ML systems is composed of the ML code {cite:p}`Sculley:2015`
 ```
 
 ## 머신러닝 시스템의 과제
@@ -84,3 +84,9 @@ MLOps 구현에는 조직의 요구 사항과 머신러닝 프로세스의 성�
 또한 최근에는 MLOps와 데이터 품질 관리, 모델 해석 가능성, 공정성 등 책임감 있는 AI(Responsible AI)에 대한 관심도 높아지고 있습니다. 머신러닝 모델의 편향성을 최소화하고 설명 가능성을 높이기 위한 다양한 기술과 방법론이 연구되고 있습니다.
 
 앞으로도 MLOps 분야는 지속적으로 발전할 것으로 보이며, 기업들의 AI/ML 프로젝트 성공을 위해 MLOps의 중요성은 더욱 커질 것으로 예상됩니다. MLOps를 효과적으로 적용하기 위해서는 조직 문화, 프로세스, 기술 스택 등을 종합적으로 고려해야 할 것입니다.
+
+## References
+
+```{bibliography}
+:filter: docname in docnames
+```
