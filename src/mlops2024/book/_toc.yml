@@ -8,6 +8,9 @@ parts:
     chapters:
       - file: week01/index
       - file: week02/index
+  - caption: Project
+    chapters:
+      - file: project/index
   - caption: About
     chapters:
       - file: syllabus/index
