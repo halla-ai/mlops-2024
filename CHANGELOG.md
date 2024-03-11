@@ -1,5 +1,19 @@
 <!--next-version-placeholder-->
 
+## v0.3.0 (2024-03-11)
+
+### Feature
+
+* **book:** Add gitops section to week02 in TOC ([`c4d465e`](https://github.com/chu-aie/mlops-2024/commit/c4d465e274b31dbd084d12e3eb80edaa4c7405d6))
+* **project:** Add project section with MLOps project details, requirements, overview, and steps; add MLOps-project.jpeg image; add project index.md with project goals and results ([`45d520f`](https://github.com/chu-aie/mlops-2024/commit/45d520f37cf5db7001fe60e1340249420ffb9b6c))
+* **book:** Add Week 2 section ([`a2457ad`](https://github.com/chu-aie/mlops-2024/commit/a2457ad168f92cf242a5342f3384193b1fdf7f6f))
+* **book:** Add new bibtex file for Week 01 references ([`b42cbbf`](https://github.com/chu-aie/mlops-2024/commit/b42cbbf36a6492d6c45d384ffd90a0a6ae8ac543))
+* **book:** Add installation and usage instructions ([`a1a0f49`](https://github.com/chu-aie/mlops-2024/commit/a1a0f4951d2a209424a3d8f93b2cf242c6210eb5))
+
+### Fix
+
+* **deps:** Update Python version requirement to 3.9,<3.13 in pyproject.toml ([`ca63a31`](https://github.com/chu-aie/mlops-2024/commit/ca63a3160c10037bfdef75fb37a857e43232d152))
+
 ## v0.2.0 (2024-03-10)
 
 ### Feature
