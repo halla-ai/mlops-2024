@@ -8,6 +8,8 @@ parts:
     chapters:
       - file: week01/index
       - file: week02/index
+        sections:
+          - file: week02/gitops
   - caption: Project
     chapters:
       - file: project/index
