@@ -1,5 +1,21 @@
 <!--next-version-placeholder-->
 
+## v0.4.0 (2024-03-25)
+
+### Feature
+
+* **sections:** Add new sections for week 04 containerization topics ([`15a5ef0`](https://github.com/chu-aie/mlops-2024/commit/15a5ef0dcac0e78b8b40b2dd9e054e4394c63ed1))
+* **containerd:** Add comprehensive guide on using containerd in MLOps2024 book week04 ([`88f5506`](https://github.com/chu-aie/mlops-2024/commit/88f5506391f0f207ea339c0ce2016818e0950f02))
+* **book:** Add containerization.md mentioning Docker and containerd ([`58468ed`](https://github.com/chu-aie/mlops-2024/commit/58468ede985b6a5740e0fc9baf31120be03a0463))
+* **docker:** Add new Docker chapter to the book with detailed information and instructions ([`cd416fa`](https://github.com/chu-aie/mlops-2024/commit/cd416fa3a1e6c7d0245326cf5c94ccab18e3d581))
+* **book:** Add Week 4 section ([`7e58dfe`](https://github.com/chu-aie/mlops-2024/commit/7e58dfe6a74ef61c1e7b9a60b6ec92bbfeaf044a))
+* **book:** Add Week 3 content ([`ce5f13f`](https://github.com/chu-aie/mlops-2024/commit/ce5f13f9c0c96228dec0046df6e2843fa8a65d44))
+* **dotfiles:** Add dotfiles.md and related images for Week 3 Book updates ([`709807a`](https://github.com/chu-aie/mlops-2024/commit/709807aa1c005313603cafa80366c0ec517880a8))
+
+### Fix
+
+* **depedencies:** Upgrade hyfi to version 1.36.3 ([`6782b4c`](https://github.com/chu-aie/mlops-2024/commit/6782b4c7a483752c7f4f4c1b20c3f2e456733fda))
+
 ## v0.3.0 (2024-03-11)
 
 ### Feature
