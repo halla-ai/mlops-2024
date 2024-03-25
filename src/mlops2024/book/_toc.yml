@@ -16,6 +16,7 @@ parts:
       - file: week03/index
         sections:
           - file: week03/dotfiles
+      - file: week04/index
   - caption: Project
     chapters:
       - file: project/index
