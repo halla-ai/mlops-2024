@@ -16,6 +16,11 @@ parts:
       - file: week03/index
         sections:
           - file: week03/dotfiles
+      - file: week04/index
+        sections:
+          - file: week04/containerization
+          - file: week04/docker
+          - file: week04/containerd
   - caption: Project
     chapters:
       - file: project/index
