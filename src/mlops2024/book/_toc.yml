@@ -7,9 +7,20 @@ parts:
   - caption: Lecture Notes
     chapters:
       - file: week01/index
+        sections:
+          - file: week01/intro
       - file: week02/index
         sections:
+          - file: week02/devops
           - file: week02/gitops
+      - file: week03/index
+        sections:
+          - file: week03/dotfiles
+      - file: week04/index
+        sections:
+          - file: week04/containerization
+          - file: week04/docker
+          - file: week04/containerd
   - caption: Project
     chapters:
       - file: project/index
