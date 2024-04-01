@@ -21,6 +21,9 @@ parts:
           - file: week04/containerization
           - file: week04/docker
           - file: week04/containerd
+      - file: week05/index
+        sections:
+          - file: week05/hyperfast-docker
   - caption: Project
     chapters:
       - file: project/index
