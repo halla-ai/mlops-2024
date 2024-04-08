@@ -7,7 +7,7 @@ We will create a scatter graph showing the document chunks of data together with
 At the end we should have a diagram like this
 ![Alt text](figs/vis-rag-scatter-example.png "Scatter example")
 
-### Setup and Retrieve Query Embeddings
+## Setup and Retrieve Query Embeddings
 
 ```
 !pip install -q sqlalchemy psycopg2-binary pandas
@@ -43,7 +43,7 @@ conn = engine.connect()
 
 ![Alt text](figs/vis-rag-1.png "Setup")
 
-### Retrieve Document Data from Database
+## Retrieve Document Data from Database
 
 We will now use the query embeddings from above to retrieve all document chunks from the data ordered by 'similarity'
 
@@ -61,7 +61,7 @@ df
 
 ![Alt text](figs/vis-rag-ret-chunks.png "Retrieve chunks")
 
-### Convert Data Retrieved into 2 Dimensional Data
+## Convert Data Retrieved into 2 Dimensional Data
 
 ```
 df['embeddings_vec'] = df['embeddings'].apply(lambda x: [float(y) for y in json.loads(x)])
@@ -87,7 +87,7 @@ df_tsne
 
 ![Alt text](figs/vis-rag-convert.png "Data Conversion")
 
-### Plot Results
+## Plot Results
 
 Different colours refer to the different documents uploaded.
 The 4 circles in blue highlight the 4 most 'relevant' chunks based on the query used above.

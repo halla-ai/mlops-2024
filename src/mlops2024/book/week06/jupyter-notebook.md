@@ -1,16 +1,11 @@
-+++
-title = "Adding a Jupyter Notebook"
-weight = 120
-sort_by = "weight"
-+++
+# Adding a Jupyter Notebook
 
 We can extend our `docker-compose` to include a [Jupyter Notebook](https://jupyter.org/).
 
-Store the following in `docker-compose-jupyter.yml`
+Store the following in `docker-compose-jupyter.yaml`
 
-```yml
+```yaml
 services:
-
   jupyter:
     image: jupyter/minimal-notebook
     ports:
@@ -20,7 +15,7 @@ services:
 Then run
 
 ```sh
-docker-compose -f docker-compose.yml -f docker-compose-jupyter.yml up
+docker-compose -f docker-compose.yaml -f docker-compose-jupyter.yaml up
 ```
 
 ## Getting the Login URL
@@ -35,19 +30,18 @@ This is the authentication token. You'll need to use that URL to Login.
 
 ## Accessing the various APIs
 
-Example accessing the embeddings API.  open up a notebook terminal and run
+Example accessing the embeddings API. open up a notebook terminal and run
 
 ```
 curl embeddings-api:80/embed     -X POST     -d '{"inputs":"What is Deep Learning?"}'     -H 'Content-Type: application/json'
 ```
 
-
 ![Alt text](figs/jupyter-notebook.png "Jupyter Notebook")
 
+## Accessing the Database
 
-## Accessing the Database ##
 ```
-!pip install -q sqlalchemy psycopg2-binary pandas  
+!pip install -q sqlalchemy psycopg2-binary pandas
 engine = sqlalchemy.create_engine('postgresql://postgres:testpassword@postgres:5432/bionic-gpt')
 conn = engine.connect()
 import sqlalchemy
@@ -58,8 +52,8 @@ pd.read_sql("SELECT * FROM information_schema.tables",conn)
 
 ![Alt text](figs/jupyter-database.png "Connect to Database")
 
+## Accessing Embeddings From Python
 
-## Accessing Embeddings From Python ##
 ```
 url = "http://embeddings-api:80/embed"
 
@@ -74,15 +68,14 @@ print(response.text[1:-1])
 
 ![Alt text](figs/jupyter-embedding.png "Embedding Calls")
 
-
-## Embedding Based Query on Database ##
+## Embedding Based Query on Database
 
 ```
 from sqlalchemy import text
 em = response.text
 
-sql = text(f"""SELECT  document_id, file_name, text, embeddings  FROM  chunks, documents 
-where documents.id = document_id 
+sql = text(f"""SELECT  document_id, file_name, text, embeddings  FROM  chunks, documents
+where documents.id = document_id
 
 ORDER BY embeddings <-> '{em[1:-1]}'""")
 # print(sql)

@@ -36,7 +36,7 @@ parts:
           - file: week06/pgadmin
           - file: week06/upgrade
           - file: week06/jupyter-notebook
-          - file: week06/visualize-rag
+          - file: week06/visualise-rag
   - caption: Project
     chapters:
       - file: project/index

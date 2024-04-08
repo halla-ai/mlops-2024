@@ -101,7 +101,7 @@ sudo systemctl restart k3s
 ## Device Plugin?
 
 ```sh
-kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.14.5/nvidia-device-plugin.yml
+kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.14.5/nvidia-device-plugin.yaml
 ```
 
 NVIDIA device plugin should have labelled the node as having an NVIDIA GPU:

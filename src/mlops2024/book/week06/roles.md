@@ -19,7 +19,7 @@ A team manager role is automatically given to the creator of a team. They have t
 - Invite new users to the team
 - Assign the _Team Administrator_ role to a team member.
 
-![Alt text](/landing-page/teams.png "Start Screen")
+![Alt text](figs/teams.png "Start Screen")
 
 ## Restricting the Team Collaborator
 
@@ -31,7 +31,9 @@ All the available permissions are stored in the [Enum](https://www.postgresql.or
 
 ```sql
 SELECT enum_range(NULL::permission);
+```
 
+```
 {InvitePeopleToTeam,ViewCurrentTeam,ViewPrompts,ManagePipelines,
 ViewDatasets,ManageDatasets,CreateApiKeys,ViewAuditTrail,SetupMod
 els}
@@ -42,6 +44,9 @@ els}
 ```sql
 bionicgpt=# SELECT enum_range(NULL::role);
                    enum_range
+```
+
+```
 ------------------------------------------------
  {TeamManager,Collaborator,SystemAdministrator}
 (1 row)
@@ -53,6 +58,9 @@ bionicgpt=#
 
 ```sql
 bionicgpt=# select * from roles_permissions;
+```
+
+```
         role         |     permission
 ---------------------+--------------------
  TeamManager         | InvitePeopleToTeam
