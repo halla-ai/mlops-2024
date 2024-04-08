@@ -239,5 +239,167 @@ kubectl get pods
 NAME                     READY   STATUS    RESTARTS   AGE
 nginx-7597c656c9-4qs55   1/1     Running   0          51s
 nginx-7597c656c9-gdjl9   1/1     Running   0          51s
-nginx-7597c656c9-7sxrc   1/1
+nginx-7597c656c9-7sxrc   1/1     Running   0          51s
 ```
+
+### 디플로이먼트 스케일링
+
+이제 이 명령을 사용하여 복제본 수를 늘립니다:
+
+```bash
+kubectl scale deployment nginx --replicas 5
+```
+
+```
+deployment.apps/nginx scaled
+```
+
+쿠버네티스는 추가 용량을 제공하기 위해 두 개의 추가 파드를 생성했습니다:
+
+```bash
+kubectl get pods
+```
+
+```
+NAME                     READY   STATUS    RESTARTS   AGE
+nginx-7597c656c9-4qs55   1/1     Running   0          2m26s
+nginx-7597c656c9-gdjl9   1/1     Running   0          2m26s
+nginx-7597c656c9-7sxrc   1/1     Running   0          2m26s
+nginx-7597c656c9-kwm6q   1/1     Running   0          2s
+nginx-7597c656c9-nwf2s   1/1     Running   0          2s
+```
+
+### 서비스 노출
+
+이제 이 NGINX 서버에 접근할 수 있도록 만들어 보겠습니다.
+
+다음 명령을 실행하여 파드를 실행 중인 노드의 포트에 노출되는 서비스를 생성합니다:
+
+```bash
+kubectl expose deployment/nginx --port 80 --type NodePort
+```
+
+```
+service/nginx exposed
+```
+
+다음 명령을 실행하여 할당된 포트를 확인합니다:
+
+```bash
+kubectl get services
+```
+
+```
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+kubernetes   ClusterIP   10.43.0.1      <none>        443/TCP        121m
+nginx        NodePort    10.43.149.39   <none>        80:30226/TCP   3s
+```
+
+포트는 30226입니다. 브라우저에서 <node-ip>:30226을 방문하면 기본 NGINX 랜딩 페이지가 표시됩니다.
+
+이 튜토리얼에서 생성한 단일 노드 K3s 클러스터를 따라 하고 있다면 <node-ip>로 localhost를 사용할 수 있습니다. 그렇지 않으면 `get nodes 명령을 실행`하고 표시되는 INTERNAL-IP를 사용하세요.
+
+```bash
+kubectl get nodes -o wide
+```
+
+```
+NAME       STATUS   ROLES                  AGE    VERSION        INTERNAL-IP
+ubuntu22   Ready    control-plane,master   124m   v1.24.4+k3s1   192.168.122.210
+```
+
+### 포트 포워딩 사용
+
+`Kubectl의 통합 포트 포워딩 기능`을 사용하면 노드 포트에 바인딩하지 않고도 서비스에 액세스할 수 있습니다. 첫 번째 서비스를 삭제하고 `--type` 플래그 없이 새 서비스를 생성합니다:
+
+```bash
+kubectl delete service nginx
+```
+
+```
+service/nginx deleted
+```
+
+```bash
+kubectl expose deployment/nginx –port 80
+```
+
+```
+service/nginx exposed
+```
+
+이렇게 하면 클러스터 내부에서 내부 IP로 액세스할 수 있는 ClusterIP 서비스가 생성됩니다.
+
+다음 명령을 실행하여 서비스의 세부 정보를 검색합니다:
+
+```bash
+kubectl get services
+```
+
+```
+NAME     	TYPE    	CLUSTER-IP   	EXTERNAL-IP   PORT(S)   AGE
+nginx   	ClusterIP   10.100.191.238   <none>    	80/TCP	2s
+```
+
+서비스는 클러스터 내에서 10.100.191.238:80으로 액세스할 수 있습니다.
+
+다음 명령을 사용하여 로컬 머신에서 이 주소에 접근할 수 있습니다:
+
+```bash
+kubectl port-forward service/nginx 8080:80
+```
+
+브라우저에서 localhost:8080을 방문하면 NGINX 랜딩 페이지가 표시됩니다. Kubectl은 클러스터 내의 서비스로 트래픽을 리디렉션하고 있습니다. 완료되면 터미널에서 Ctrl+C를 눌러 포트 포워딩 세션을 중지할 수 있습니다.
+
+포트 포워딩은 서비스 없이도 작동합니다. 다음 명령을 사용하여 디플로이먼트의 파드에 직접 연결할 수 있습니다:
+
+```bash
+kubectl port-forward deployment/nginx 8080:80
+```
+
+localhost:8080을 방문하면 다시 NGINX 랜딩 페이지가 표시되지만 이번에는 서비스를 거치지 않습니다.
+
+### YAML 파일 적용
+
+마지막으로 선언적 YAML 파일을 클러스터에 적용하는 방법을 살펴보겠습니다. 먼저 파드에 대한 `간단한 쿠버네티스 매니페스트`를 작성합니다:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+	- name: nginx
+	  image: nginx:latest
+```
+
+이 매니페스트를 nginx.yaml에 저장하고 `kubectl apply`를 실행하여 파드를 자동으로 생성합니다:
+
+```bash
+kubectl apply -f nginx.yaml
+```
+
+```
+pod/nginx created
+```
+
+파일을 수정한 후 명령을 반복하여 클러스터에 변경 사항을 적용할 수 있습니다.
+
+이제 Kubectl을 사용하여 쿠버네티스와 상호 작용하는 기본 사항에 익숙해졌습니다!
+
+## 핵심 사항
+
+쿠버네티스는 선도적인 컨테이너 오케스트레이터입니다. 이 기사에서는 쿠버네티스의 기능을 살펴보고, 작동 방식을 알아보았으며, 애플리케이션을 구성하는 데 사용할 가장 중요한 객체 유형을 다루었습니다.
+
+이론을 넘어서 인기 있는 K3s 배포판으로 자신만의 쿠버네티스 클러스터를 시작하는 방법도 보았습니다. 이제 최소한의 수동 구성으로 자신만의 컨테이너화된 시스템을 대규모로 구축하고 실행할 수 있습니다.
+
+**주요 용어 설명:**
+
+- **컨트롤 플레인**: 클러스터의 상태를 관리하고 API 서버, 컨트롤러 매니저, 스케줄러를 실행하는 쿠버네티스의 핵심 구성 요소입니다.
+- **kubectl**: 쿠버네티스 클러스터와 상호 작용하기 위한 명령줄 인터페이스 도구입니다.
+- **오케스트레이션**: 컨테이너의 배포, 스케일링 및 관리를 자동화하는 프로세스입니다.
+- **클러스터**: 쿠버네티스에 의해 관리되는 노드 그룹으로, 컨테이너화된 워크로드를 실행합니다.
+- **매니페스트**: 쿠버네티스 객체의 원하는 상태를 선언적으로 정의하는 YAML 또는 JSON 파일입니다.
+
+쿠버네티스는 지속적으로 발전하고 있으며, 새로운 기능과 개선 사항이 정기적으로 도입되고 있습니다. 쿠버네티스 생태계와 관련 프로젝트가 성장함에 따라 컨테이너 오케스트레이션의 가능성도 확대되고 있습니다.
