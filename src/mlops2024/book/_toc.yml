@@ -26,17 +26,22 @@ parts:
           - file: week05/hyperfast-docker
       - file: week06/index
         sections:
-          - file: week06/introduction
-          - file: week06/bare-metal
-          - file: week06/installation
-          - file: week06/gpu-preparation
-          - file: week06/sso
-          - file: week06/tgi
-          - file: week06/roles
-          - file: week06/pgadmin
-          - file: week06/upgrade
-          - file: week06/jupyter-notebook
-          - file: week06/visualise-rag
+          - file: week06/kubernetes
+      - file: week07/index
+        sections:
+          - file: week07/bionic/index
+            sections:
+              - file: week07/bionic/introduction
+              - file: week07/bionic/bare-metal
+              - file: week07/bionic/installation
+              - file: week07/bionic/gpu-preparation
+              - file: week07/bionic/sso
+              - file: week07/bionic/tgi
+              - file: week07/bionic/roles
+              - file: week07/bionic/pgadmin
+              - file: week07/bionic/upgrade
+              - file: week07/bionic/jupyter-notebook
+              - file: week07/bionic/visualise-rag
   - caption: Project
     chapters:
       - file: project/index
