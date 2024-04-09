@@ -42,6 +42,7 @@ parts:
               - file: week07/bionic/upgrade
               - file: week07/bionic/jupyter-notebook
               - file: week07/bionic/visualise-rag
+          - file: week07/MMHuman3D/index
   - caption: Project
     chapters:
       - file: project/index
