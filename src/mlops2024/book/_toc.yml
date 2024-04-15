@@ -42,10 +42,14 @@ parts:
               - file: week07/bionic/upgrade
               - file: week07/bionic/jupyter-notebook
               - file: week07/bionic/visualise-rag
-          - file: week07/MMHuman3D/index
-  - caption: Project
+  - caption: Projects
     chapters:
-      - file: project/index
+      - file: projects/index
+        sections:
+          - file: projects/202121010/index
+            sections:
+              - file: projects/202121010/MMHuman3D/index
+      - file: projects/setup
   - caption: About
     chapters:
       - file: syllabus/index
