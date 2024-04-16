@@ -49,6 +49,9 @@ parts:
           - file: projects/202121010/index
             sections:
               - file: projects/202121010/MMHuman3D/index
+          - file: projects/202021012/index
+            sections:
+              - file: projects/202021012/DUSt3R/index
       - file: projects/setup
   - caption: About
     chapters:
