@@ -42,6 +42,12 @@ parts:
               - file: week07/bionic/upgrade
               - file: week07/bionic/jupyter-notebook
               - file: week07/bionic/visualise-rag
+      - file: week09/index
+        sections:
+          - file: lectures/mlops/security/sec
+          # - file: lectures/mlops/security/auth-enc-sign
+          # - file: lectures/mlops/security/age-gpg-ssh
+          # - file: lectures/mlops/security/pass
   - caption: Projects
     chapters:
       - file: projects/index
