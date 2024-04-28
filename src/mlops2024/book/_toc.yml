@@ -44,10 +44,10 @@ parts:
               - file: week07/bionic/visualise-rag
       - file: week09/index
         sections:
-          - file: lectures/mlops/security/sec
-          - file: lectures/mlops/security/auth-enc-sign
-          - file: lectures/mlops/security/age-gpg-ssh
-          - file: lectures/mlops/security/pass
+          - file: week09/sec
+          - file: week09/auth-enc-sign
+          - file: week09/age-gpg-ssh
+          - file: week09/pass
   - caption: Projects
     chapters:
       - file: projects/index
