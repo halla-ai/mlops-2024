@@ -46,7 +46,7 @@ parts:
         sections:
           - file: lectures/mlops/security/sec
           - file: lectures/mlops/security/auth-enc-sign
-          # - file: lectures/mlops/security/age-gpg-ssh
+          - file: lectures/mlops/security/age-gpg-ssh
           # - file: lectures/mlops/security/pass
   - caption: Projects
     chapters:
