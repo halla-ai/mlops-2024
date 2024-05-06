@@ -121,11 +121,12 @@ frame 1개 프로세싱 소요 시간이 0.1초 예상 가능하다.
 연산 시간을 단축하기 위해 해상도를 줄이는 방법이 있다.
 
 1. **Opencv**
+
    1. **Opencv VideoCapture를 통해 RTSP를 불러오는 것이다.**
       따러 Opencv set 함수를 통해 설정함
       ![vid_cap_set](./figs/vid_cap_set.png)
       Width: 640 Height: 480 으로 설정
-      ![default](./figs/default%20.png)
+      ![default](./figs/default.png)
       set 함수로 해상도를 설정해도 바뀌지 않음
       **RTSP 해상도는 스트림 소스 측에서 특정 해상도로 전송하고 있을 경우, 클라이언트 측에서 해상도를 강제로 변경할 수 없다고 함**
    2. **Opencv resize 함수를 통해 해상도를 강제로 변경 시도**
@@ -137,6 +138,7 @@ frame 1개 프로세싱 소요 시간이 0.1초 예상 가능하다.
       ![after_resize_fps10](./figs/after_resize_fps10.png)
 
       해상도가 바뀌긴 했지만 연산 속도가 이전보다 더 늦어진 것을 확인할 수 있음
+
 2. **RTSP**
 
    1. RTSP 스트림 소스측에서 전송할 때 해상도 옵션 변경
