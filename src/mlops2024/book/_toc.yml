@@ -48,6 +48,12 @@ parts:
           - file: week09/auth-enc-sign
           - file: week09/age-gpg-ssh
           - file: week09/pass
+      - file: week10/index
+        sections:
+          - file: week10/autotrain
+          - file: week10/installation
+          - file: week10/starting
+          - file: week10/llm_finetuning
   - caption: Projects
     chapters:
       - file: projects/index
