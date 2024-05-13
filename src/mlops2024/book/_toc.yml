@@ -54,6 +54,9 @@ parts:
           - file: week10/installation
           - file: week10/starting
           - file: week10/llm_finetuning
+      - file: week11/index
+        sections:
+          - file: week11/llama-factory
   - caption: Projects
     chapters:
       - file: projects/index
