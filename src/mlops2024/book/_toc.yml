@@ -57,6 +57,12 @@ parts:
       - file: week11/index
         sections:
           - file: week11/llama-factory
+      - file: week12/index
+        sections:
+          - file: week12/langchain
+          - file: week12/langchain-io
+          - file: week12/langserve
+          - file: week12/langsmith
   - caption: Projects
     chapters:
       - file: projects/index
@@ -67,6 +73,7 @@ parts:
           - file: projects/202021012/index
             sections:
               - file: projects/202021012/DUSt3R/index
+              - file: projects/202021012/finetuning/index
       - file: projects/setup
   - caption: About
     chapters:
