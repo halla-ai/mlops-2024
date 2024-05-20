@@ -73,6 +73,7 @@ parts:
           - file: projects/202021012/index
             sections:
               - file: projects/202021012/DUSt3R/index
+              - file: projects/202021012/finetuning/index
       - file: projects/setup
   - caption: About
     chapters:
