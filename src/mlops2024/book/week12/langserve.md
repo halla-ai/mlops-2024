@@ -2,7 +2,7 @@
 
 LangServe는 LangChain 런너블(runnable) 및 체인을 REST API로 배포할 수 있도록 돕는 도구입니다. 이 라이브러리는 FastAPI와 통합되어 있으며, 데이터 검증을 위해 Pydantic을 사용합니다. 또한, 서버에 배포된 런너블을 호출할 수 있는 클라이언트와 LangChainJS에서 사용할 수 있는 JavaScript 클라이언트를 제공합니다.
 
-### 특징
+## 특징
 
 - 입력 및 출력 스키마가 LangChain 객체에서 자동으로 추론되어 각 API 호출 시 엄격하게 적용됩니다. 이와 함께 풍부한 에러 메시지가 제공됩니다.
 - JSONSchema와 Swagger를 포함한 API 문서 페이지가 제공됩니다.
@@ -12,12 +12,12 @@ LangServe는 LangChain 런너블(runnable) 및 체인을 REST API로 배포할 �
 - (선택 사항으로) LangSmith로의 내장 추적 기능을 추가할 수 있습니다. API 키만 추가하면 됩니다.
 - FastAPI, Pydantic, uvloop, asyncio와 같은 오픈 소스 Python 라이브러리를 사용하여 안정성이 보장됩니다.
 
-### 한계
+## 한계
 
 - 서버에서 발생하는 이벤트에 대해 클라이언트 콜백을 지원하지 않습니다.
 - Pydantic V2를 사용할 때 OpenAPI 문서가 생성되지 않습니다. FastAPI는 pydantic v1과 v2 네임스페이스를 혼용하는 것을 지원하지 않습니다. 자세한 내용은 아래 섹션을 참조하십시오.
 
-### LangServe 프로젝트 부트스트랩
+## LangServe 프로젝트 부트스트랩
 
 LangChain CLI를 사용하여 LangServe 프로젝트를 빠르게 부트스트랩할 수 있습니다. 이를 위해 최신 버전의 langchain-cli가 설치되어 있는지 확인하십시오. 설치는 다음 명령어를 사용합니다:
 
