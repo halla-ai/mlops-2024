@@ -63,6 +63,9 @@ parts:
           - file: week12/langchain-io
           - file: week12/langserve
           - file: week12/langsmith
+      - file: week13/index
+        sections:
+          - file: week13/langchain-memory
   - caption: Projects
     chapters:
       - file: projects/index
