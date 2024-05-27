@@ -159,7 +159,7 @@ print(docs)
 
 이렇게 Slack 데이터를 로드하여 LLM 애플리케이션에서 활용할 수 있습니다. LangChain은 문서 로더를 통해 다양한 소스의 데이터를 쉽게 통합할 수 있도록 지원하며, 이는 RAG 프로세스에서 핵심적인 역할을 합니다.
 
-# 문서 변환기 (Document Transformers)
+## 문서 변환기 (Document Transformers)
 
 LangChain의 문서 변환기는 이전 섹션에서 생성한 문서를 조작하는데 필수적인 도구입니다.
 

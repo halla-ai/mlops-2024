@@ -65,6 +65,7 @@ parts:
           - file: week12/langsmith
       - file: week13/index
         sections:
+          - file: week13/langchain-retrieval
           - file: week13/langchain-memory
   - caption: Projects
     chapters:
