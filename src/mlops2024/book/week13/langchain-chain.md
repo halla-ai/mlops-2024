@@ -22,8 +22,6 @@ for chunk in runnable.stream({"question": "What are the seven wonders of the wor
     print(chunk, end="", flush=True)
 ```
 
-![LCEL 예시](./figs/Screen_Recording_2023-11-15_at_1.15.56_PM_V1.gif)
-
 또는 LLMChain은 구성 요소를 구성하는 LCEL과 유사한 옵션입니다. LLMChain 예시는 다음과 같습니다:
 
 ```python
@@ -78,8 +76,6 @@ class Person(BaseModel):
 chain = create_structured_output_chain(Person, llm, prompt, verbose=True)
 chain.run("Sally is 13")
 ```
-
-![구조화된 출력 예시](./figs/image-34.png)
 
 LangChain은 OpenAI 함수를 활용하여 추출, 태깅, OpenAPI, 인용 QA 등 다양한 목적을 위한 특정 체인을 생성합니다.
 
