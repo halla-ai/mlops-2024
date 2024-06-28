@@ -80,6 +80,7 @@ parts:
             sections:
               - file: projects/202021012/DUSt3R/index
               - file: projects/202021012/finetuning/index
+              - file: projects/202021012/RAG_project/index
       - file: projects/setup
   - caption: About
     chapters:
