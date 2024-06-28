@@ -1,12 +1,17 @@
 import os
+
+from langchain.chains.combine_documents.map_reduce import (
+    MapReduceDocumentsChain,
+    ReduceDocumentsChain,
+)
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains.llm import LLMChain
-from langchain_core.prompts import PromptTemplate
-from langchain_community.document_loaders import PyPDFLoader, TextLoader
 from langchain.text_splitter import CharacterTextSplitter
-from langchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain, ReduceDocumentsChain
-from langchain_community.chat_models import ChatOllama
-from langchain_community.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOllama, ChatOpenAI
+from langchain_community.document_loaders import PyPDFLoader, TextLoader
+from langchain_core.prompts import PromptTemplate
+
+
 class DocumentSummarizer:
     def __init__(self,
                  pdf_path=None,

@@ -1,11 +1,12 @@
-from rag_copy import Chatbot
-from summarize_copy import DocumentSummarizer
-import streamlit as st
-from pydub import AudioSegment
+import datetime
 import os
 from io import BytesIO
+
 import chardet
-import datetime
+import streamlit as st
+from pydub import AudioSegment
+from rag_copy import Chatbot
+from summarize_copy import DocumentSummarizer
 
 # 챗봇 인스턴스 생성
 

@@ -1,15 +1,18 @@
-from langchain_core.prompts import ChatPromptTemplate
-from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter
+import re
+
+import torch
+from langchain.text_splitter import (
+    CharacterTextSplitter,
+    RecursiveCharacterTextSplitter,
+)
+from langchain_community.chat_models import ChatOllama, ChatOpenAI
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
+from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_core.output_parsers import StrOutputParser
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
-from langchain_community.embeddings import HuggingFaceBgeEmbeddings
-from langchain_community.chat_models import ChatOllama
-from langchain_community.chat_models import ChatOpenAI
 from sentence_transformers import SentenceTransformer, util
-import re
-import torch
 
 
 class Chatbot:

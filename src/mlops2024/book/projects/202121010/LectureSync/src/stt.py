@@ -1,9 +1,10 @@
-from google.cloud import speech_v1p1beta1 as speech
-from google.cloud import storage
 import io
 import os
-from pydub import AudioSegment
+
 from dotenv import load_dotenv
+from google.cloud import speech_v1p1beta1 as speech
+from google.cloud import storage
+from pydub import AudioSegment
 
 load_dotenv()
 
