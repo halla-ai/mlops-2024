@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v0.6.0 (2024-06-29)
+
+### Feature
+
+* Update LectureSync of project by ypilseong ([`f2f46b4`](https://github.com/chu-aie/mlops-2024/commit/f2f46b4ea329903b9ca6ed290903243546cad21a))
+
 ## v0.5.0 (2024-06-11)
 
 ### Feature
